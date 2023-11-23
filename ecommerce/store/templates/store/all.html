@@ -1,0 +1,134 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+  .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+  }
+
+  .pagination a {
+      color: #007BFF;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      margin: 0 5px;
+  }
+
+  .pagination a:hover {
+      background-color: #007BFF;
+      color: #fff;
+  }
+
+  .pagination .current {
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: #fff;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      margin: 0 5px;
+  }
+</style>
+
+<div class="album py-5 bg-light">
+        
+  <div class="pagination">
+    <span class="step-links">
+        {% if products.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ products.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ products.number }} of {{ products.paginator.num_pages }}.
+        </span>
+
+        {% if products.has_next %}
+            <a href="?page={{ products.next_page_number }}">next</a>
+            <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+
+    <div class="container">
+      
+
+      <div class="pb-3 h5"> All products </div>
+
+
+      <hr>
+
+      <br>
+      
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+        {%for product in products %}
+        
+
+
+        
+    
+        <div class="col">
+    
+            <div class="card shadow-sm">
+              <a href="{{product.get_absolute_url}}">
+            <img class="img-fluid" alt="Responsive image" src="{% static 'media/images/'%}{{ product.slug }}.jpg" >
+              </a>
+            <div class="card-body">
+              <p class="card-text ">
+                <a class="text-info text-decoration-none" href="{{product.get_absolute_url}}">{{product.title | capfirst }}</a>
+              </p>
+              <figcaption class="blockquote-footer">
+                <cite title="Source Title">{{product.brand }}</cite>
+              </figcaption>
+              <div class="d-flex justify-content-between align-items-center">
+                <h5> ${{product.price}} </h5>
+    
+            </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    
+    
+    {% endfor %}
+           
+
+      </div>
+    
+    </div>
+
+
+
+    <div class="pagination">
+      <span class="step-links">
+          {% if products.has_previous %}
+              <a href="?page=1">&laquo; first</a>
+              <a href="?page={{ products.previous_page_number }}">previous</a>
+          {% endif %}
+  
+          <span class="current">
+              Page {{ products.number }} of {{ products.paginator.num_pages }}.
+          </span>
+  
+          {% if products.has_next %}
+              <a href="?page={{ products.next_page_number }}">next</a>
+              <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
+
+  </div>
+
+  
+
+{% endblock %}

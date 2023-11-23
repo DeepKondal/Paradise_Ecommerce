@@ -1,0 +1,126 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+  
+    <section class="py-4 text-center container">
+
+        <div class="row py-lg-5">
+        
+            <div class="col-lg-6 col-md-8 mx-auto">
+                
+
+                <h4> PARADISE... The Future is here. </h4>
+
+
+                <br>
+                
+
+                <p class="lead text-muted">
+
+                Powered with Machine Learning.
+
+                </p>
+
+
+                <br>
+        
+                <a href="#" class="btn btn-primary my-2"> Try our recommender feature </a>
+                
+                
+            </div>
+        
+        </div>
+
+    
+    </section>
+    <style>
+      .product-card {
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          overflow: hidden;
+          margin: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+          transition: transform 0.3s ease-in-out;
+      }
+
+      .product-card:hover {
+          transform: scale(1.05);
+      }
+
+      .product-image {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+      }
+
+      .product-info {
+          padding: 15px;
+      }
+  </style>
+
+
+
+           
+            <div class="album py-5 bg-light">
+            <div class="container">
+    
+              <div class="pb-3 h5"> Some Featured products </div>
+              <figcaption class="blockquote-footer">
+                
+              
+              <cite title="Source Title">Powered by our popularity based suggestion algorithm</cite>
+            </figcaption>
+              <hr>
+    
+              <br>
+              
+    
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for product in my_products %}
+                <div class="col-md-3">
+                  <a href="http://127.0.0.1:8000/product/{{ product.slug }}">  
+                    <div class="product-card">
+                      <img class="product-image" src="{% static 'media/images/'%}{{ product.slug }}.jpg" alt="{{ product.title }}">
+                      </a>
+                        <div class="product-info">
+                            <h3>
+                              <a class="h5 text-info text-decoration-none" href="{{product.get_absolute_url}}">{{product.title | capfirst }}</a>
+                            </h3>
+                            
+                            
+                            <figcaption class="blockquote-footer">
+                              <cite title="Source Title">{{product.brand }}</cite>
+                            </figcaption>
+                            
+                            <p>Price: ${{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+                  
+              </div>
+          </div>
+      
+         
+
+
+
+
+        </div>
+        
+        </div>
+
+      </div>
+
+ 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+
+
+{% endblock %}
