@@ -82,7 +82,7 @@
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
                 {% for product in my_products %}
                 <div class="col-md-3">
-                  <a href="http://127.0.0.1:8000/product/{{ product.slug }}">  
+                  <a href="{{product.get_absolute_url}}">  
                     <div class="product-card">
                       <img class="product-image" src="{% static 'media/images/'%}{{ product.slug }}.jpg" alt="{{ product.title }}">
                       </a>
