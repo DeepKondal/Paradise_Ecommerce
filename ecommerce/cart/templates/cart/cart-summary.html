@@ -30,7 +30,7 @@
         
         <div class="col-md-3 col-lg-2 order-md-first bg-light">
         
-            <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{product.image.url}}"> <!-- Product image -->
+            <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{% static 'media/images/'%}{{ product.slug }}.jpg"> <!-- Product image -->
         
         </div>
 
@@ -125,17 +125,16 @@
 
  </main>
  <br><br><br><br><br>
+ 
  <nav class="navbar fixed-bottom navbar-light bg-light">
-  <div class="col-12 text-end">
-    <div class="h6 fw-bold col-12 text-end "> Cart total:  <div id="total" class="d-inline-flex shadow p-2 bg-light rounded"> $ {{cart.get_total}}  </div>
+  <div class="col-12  text-center">
     &nbsp
+    <div class="h6 fw-bold col-12 "> Cart total:  <div id="total" class="d-inline-flex shadow p-1 bg-light rounded"> $ {{cart.get_total}}  </div>
     &nbsp
+    <a href="{% url 'checkout' %}" class="btn btn-primary my-2 text-end"> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Proceed to checkout </a>
   </div>
 
-  <br>
   
-
-  <a href="{% url 'checkout' %}" class="btn btn-primary my-2"> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Proceed to checkout </a>
 
   </div>
 </nav>

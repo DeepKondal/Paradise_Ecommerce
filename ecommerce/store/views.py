@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Category,Product
 from django.shortcuts import get_object_or_404
 import random
-from . import ml_popular,ml_content
+from . import ml_popular
+from . import ml_content
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
