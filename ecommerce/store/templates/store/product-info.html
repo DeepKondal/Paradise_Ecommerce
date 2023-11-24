@@ -4,6 +4,8 @@
 
 {% block content %}
 
+
+
 <div class="container">
 
     <main class="pt-5">
@@ -29,6 +31,7 @@
 
 
                 <p> {{product.description}} </p>
+                <p>{{product.slug}}</p>
 
                 <div class="border">
 
@@ -81,13 +84,75 @@
                             </div>
                         
                         </div>
-
+                        
                     </div>
 
                 </div>
 
             </div>
 
+
+
+            <style>
+                .product-card {
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    margin: 20px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    background-color: #fff;
+                    transition: transform 0.3s ease-in-out;
+                }
+          
+                .product-card:hover {
+                    transform: scale(1.05);
+                }
+          
+                .product-image {
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                }
+          
+                .product-info {
+                    padding: 15px;
+                }
+            </style>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="pb-1 h4"> People who like this product also like : </div>
+      <figcaption class="blockquote-footer">
+        
+      
+      <cite title="Source Title">Recommendations powered by Machine Learning</cite>
+    </figcaption>
+      <hr>
+
+      <br>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+                {% for product in content_product %}
+                <div class="col-md-3">
+                    <a href="http://127.0.0.1:8000/product/{{ product.slug }}">  
+                        <div class="product-card">
+                          <img class="product-image" src="{% static 'media/images/'%}{{ product.slug }}.jpg" alt="{{ product.title }}">
+                          </a>
+                            <div class="product-info">
+                                <h3>
+                                    <a class="h5 text-info text-decoration-none" href="{{product.get_absolute_url}}">{{product.title | capfirst }}</a>
+                                  </h3>
+                                  <figcaption class="blockquote-footer">
+                                    <cite title="Source Title">{{product.brand }}</cite>
+                                  </figcaption>
+
+                                  <p>Price: ${{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+                    
+            </div>
         </div>
 
     </main>
@@ -129,3 +194,5 @@ $(document).on('click','#add-button',function(e){
 </script>
 
 {% endblock %}
+
+

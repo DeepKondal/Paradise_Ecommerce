@@ -9,7 +9,7 @@ def popular_products():
 
     product_data = pd.read_csv('product_data.csv')
 
-    popular_products = pd.DataFrame(paradise_ratings.groupby('product_Id')['rating'].sum())
+    popular_products = pd.DataFrame(paradise_ratings.groupby('product_Id')['rating'].count())
     most_popular = popular_products.sort_values('rating', ascending=False)
 
     data_ratings = most_popular.sample(20)
