@@ -18,7 +18,6 @@ def popular_products():
     final_data = merged_dataset[['title', 'brand', 'price', 'description', 'slug', 'image', 'category_id']]
     final_data['category_id'] = final_data['category_id'].astype(int)
     
-    
 
     return final_data.sample(8)
 

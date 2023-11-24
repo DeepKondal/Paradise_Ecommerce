@@ -10,7 +10,7 @@ class Cart():
         cart=self.session.get('session_key') #For existing user
 
         if 'session_key' not in request.session:     # For new user
-            cart = self.session['session_key'] = {}
+            cart = self.session['session_key'] = {'session_test':1}
         
         self.cart = cart
 
