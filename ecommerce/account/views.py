@@ -121,6 +121,7 @@ def email_verification_failed(request):
 def my_login(request):
     
     form=LoginForm()
+    error_message = None
 
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST)
@@ -134,8 +135,11 @@ def my_login(request):
             if user is not None:
                 auth.login(request,user)
                 return redirect("dashboard")
-            
-    context = {'form':form}
+            else:
+                error_message = "Invalid username or password. Please try again."
+                
+                
+    context = {'form':form,'error_message': error_message}
     return render(request,'account/my-login.html',context=context)
 
 

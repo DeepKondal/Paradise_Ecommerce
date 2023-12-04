@@ -32,9 +32,18 @@ background-color :grey;
                 <br>
                 {{form.password|as_crispy_field}}
                 <br>
+                {% if form.errors %}
+                    <div class="alert alert-danger mt-3" style="background-color: firebrick;" role="alert">
+                        Invalid username or password. Please try again.
+                    </div>
+                {% endif %}
+                
                 <button type='submit' class='btn btn-primary btn-lg w-100 btn-block'>&nbsp; Login </button>
-            </form>
+            
+            
 
+            </form>
+            
 
     </div>
     <br>
@@ -56,8 +65,8 @@ background-color :grey;
 
 
 
-
 </body>
+
 
 
 
