@@ -219,17 +219,17 @@ Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 7. **Access on Browser**  
    Visit `http://<your-ec2-public-ip>:8000`
 
-> ✅ Tip: For production use, configure Gunicorn + Nginx or use Elastic Beanstalk with MySQL RDS.
+>  NOTE: For production use, you can configure Gunicorn + Nginx or use Elastic Beanstalk with MySQL RDS.
 
 ---
 
 
 ## 👥 Contributors
 
-- Abideep Kondal  
-- Adilmanzoor Kalilur Rahman  
-- Derrick Narkah  
-
+- Abideep Kondal
+- Derrick Narkah
+- Adilmanzoor Kalilur  
+  
 ---
 
 ## 📄 License
