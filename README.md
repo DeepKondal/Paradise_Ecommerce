@@ -66,7 +66,7 @@ ecommerce/
 ![Sequence Diagram](assets/Sequence_Diagram.JPG)
 
 ### 🔹 MVC Architecture
-![MVC](assets/MVC_Accitchture.JPG)
+![MVC](assets/MVC_Architecture.JPG)
 
 ### 🔹 ER Diagram (Database Model)
 ![Data Model](assets/Data_Model.jpg)
