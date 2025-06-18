@@ -34,6 +34,26 @@ ecommerce/
 
 ---
 
+## 🖼️ UI Screenshots
+
+### 🔹 Register Page
+![Register](assets/Register.png)
+
+### 🔹 Homepage
+![Homepage](assets/Homepage.png)
+
+### 🔹 Cart View
+![Cart](assets/Cart.png)
+
+### 🔹 Add to Cart Action
+![Add to Cart](assets/Add_to_cart.png)
+
+### 🔹 Checkout Page
+![Checkout](assets/Checkout.png)
+
+---
+
+
 ## 📊 UML and Architecture
 
 ### 🔹 Use Case Diagram
