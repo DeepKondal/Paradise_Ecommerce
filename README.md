@@ -36,11 +36,11 @@ ecommerce/
 
 ## 🖼️ UI Screenshots
 
-### 🔹 Register Page
-![Register](assets/Register.png)
-
 ### 🔹 Homepage
 ![Homepage](assets/Homepage.png)
+
+### 🔹 Register Page
+![Register](assets/Register.png)
 
 ### 🔹 Cart View
 ![Cart](assets/Cart.png)
