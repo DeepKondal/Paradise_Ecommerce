@@ -115,7 +115,7 @@ ecommerce/
 
 - **Unit Testing**: Views and models tested using Django's built-in framework.
 - **Component Testing**: Checkout, authentication, cart actions tested individually.
-- **System Testing**: Performed during Sprint 4 with complete integration.
+- **System Testing**: Performed during final stages with complete integration.
 
 ---
 
@@ -142,6 +142,87 @@ Machine Learning model trained on:
 - JIRA used for issue tracking and burndown chart generation
 
 ---
+
+
+## 🚀 How to Run the Project
+
+### 🧪 Local Deployment
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/DeepKondal/Paradise_Ecommerce.git
+   cd ecommerce
+   ```
+
+2. **Create a Virtual Environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # For Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run Migrations**
+   ```bash
+   python manage.py migrate
+   ```
+
+5. **Start the Development Server**
+   ```bash
+   python manage.py runserver
+   ```
+
+Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
+
+---
+
+### ☁️ Cloud Deployment on AWS (EC2)
+
+1. **Create an AWS EC2 Instance**
+   - Choose Ubuntu or Amazon Linux AMI
+   - Open ports 22 (SSH), 80 (HTTP), and 8000 (Django dev)
+   - Generate and download a `.pem` key pair
+
+2. **SSH into the Instance**
+   ```bash
+   chmod 400 your-key.pem
+   ssh -i "your-key.pem" ec2-user@your-ec2-public-ip
+   ```
+
+3. **Install Python, pip, and Git**
+   ```bash
+   sudo apt update && sudo apt install python3-pip python3-venv git
+   ```
+
+4. **Clone the Repository**
+   ```bash
+   git clone https://github.com/DeepKondal/Paradise_Ecommerce.git
+   cd paradise-ecommerce
+   ```
+
+5. **Set Up the Virtual Environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+6. **Run Migrations and Start Server**
+   ```bash
+   python manage.py migrate
+   python manage.py runserver 0.0.0.0:8000
+   ```
+
+7. **Access on Browser**  
+   Visit `http://<your-ec2-public-ip>:8000`
+
+> ✅ Tip: For production use, configure Gunicorn + Nginx or use Elastic Beanstalk with MySQL RDS.
+
+---
+
 
 ## 👥 Contributors
 
